@@ -115,7 +115,7 @@ Algumas verificações conferem o conteúdo inicial fornecido. Ao atualizar nome
 
 O projeto está configurado no Sites e usa o endereço:
 
-`https://herbert-desenvolvedor.maple-stone-8889.chatgpt.site`
+`https://herbert-desenvolvedor.eskeletog3.chatgpt.site`
 
 A pasta publicada é `dist`, conforme `.openai/hosting.json`. Cada nova publicação deve ser gerada a partir de uma compilação aprovada e do mesmo commit enviado ao repositório de origem do serviço.
 
