@@ -81,13 +81,13 @@ Para adicionar um projeto, inclua um objeto em `projects`, com `id` único, nome
 
 Os campos `repositoryUrl`, `demoUrl` e `designUrl` são opcionais. Deixe-os ausentes quando não houver uma URL real; os respectivos botões só aparecem quando esses campos são preenchidos. Use endereços completos com `https://` e confirme que podem ser acessados pelo visitante.
 
-Para usar imagens reais, salve os arquivos em `public/images/` e preencha `project.image` ou `profile.photo` com `src` e `alt`. Use um caminho como `/images/arquivo.webp`, forneça uma descrição em português e otimize o arquivo. Os cards reservam uma proporção de 8:5 para imagens; a foto pessoal usa formato quadrado. Não foram criadas imagens fictícias.
+Para usar imagens reais, salve os arquivos em `public/images/` e preencha `project.image` ou `profile.photo` com `src` e `alt`. Use um caminho como `/images/arquivo.webp`, forneça uma descrição em português e otimize o arquivo. Os cards reservam uma proporção de 16:9 para imagens; a foto pessoal usa formato quadrado. Não foram criadas imagens fictícias.
 
 Em `experiences`, os campos `role` e `description` só aparecem quando preenchidos. A seção de certificados só aparece quando `certifications` contém itens. Não inclua informações confidenciais das empresas.
 
 Para mudar as cores, edite as variáveis em `src/styles.scss`. Os estilos específicos ficam ao lado de seus componentes.
 
-Se alterar o nome, a apresentação ou o e-mail, atualize também `src/index.html`, incluindo título, descrição, Open Graph e contato alternativo de `noscript`. Domínio, URL canônica e imagem de compartilhamento foram omitidos por não terem sido fornecidos.
+Se alterar o nome, a apresentação ou o e-mail, atualize também `src/index.html`, incluindo título, descrição, Open Graph, URL canônica e contato alternativo de `noscript`.
 
 ## Executar as verificações
 
@@ -111,7 +111,15 @@ São verificados: carregamento sem erros no console, seis seções, metadados, m
 
 Algumas verificações conferem o conteúdo inicial fornecido. Ao atualizar nome, e-mail, projetos ou links, atualize as expectativas correspondentes em `tests/portfolio.spec.ts`.
 
-## Publicar na Vercel
+## Versão pública
+
+O projeto está configurado no Sites e usa o endereço:
+
+`https://herbert-desenvolvedor.maple-stone-8889.chatgpt.site`
+
+A pasta publicada é `dist`, conforme `.openai/hosting.json`. Cada nova publicação deve ser gerada a partir de uma compilação aprovada e do mesmo commit enviado ao repositório de origem do serviço.
+
+## Publicar também na Vercel
 
 1. Crie um repositório com o conteúdo desta pasta, incluindo `package-lock.json`. O `.gitignore` exclui dependências, arquivos gerados e configurações locais.
 2. Na Vercel, importe o repositório e selecione esta pasta como raiz do projeto.
@@ -121,7 +129,7 @@ Algumas verificações conferem o conteúdo inicial fornecido. Ao atualizar nome
 
 Não são necessárias variáveis de ambiente, credenciais de banco de dados ou regras de reescrita: a navegação usa âncoras da mesma página. Veja a [documentação de configuração da Vercel](https://vercel.com/docs/project-configuration/vercel-json).
 
-O projeto está preparado para publicação, mas não foi enviado a uma conta da Vercel.
+Essa configuração é uma opção adicional; ela não é necessária para a versão já hospedada no Sites.
 
 ## Informações e links utilizados
 
