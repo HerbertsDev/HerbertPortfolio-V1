@@ -1,0 +1,13 @@
+/node_modules/
+/dist/
+/.angular/
+/out-tsc/
+/test-results/
+/playwright-report/
+/.vercel/
+/.sites-runtime/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,42 @@
+<header class="site-header">
+  <div class="header-inner container">
+    <a
+      class="wordmark"
+      href="#inicio"
+      aria-label="Herbert — início"
+      (click)="menuOpen.set(false)"
+    >
+      Herbert
+      <span>.dev</span>
+    </a>
+    <button
+      #menuButton
+      class="menu-toggle"
+      type="button"
+      aria-controls="navegacao"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="menuOpen.set(!menuOpen())"
+    >
+      {{ menuOpen() ? "Fechar menu" : "Abrir menu" }}
+      <span class="menu-symbol" [class.is-open]="menuOpen()" aria-hidden="true">
+        <i></i>
+        <i></i>
+      </span>
+    </button>
+    <nav
+      id="navegacao"
+      aria-label="Navegação principal"
+      [class.is-open]="menuOpen()"
+    >
+      @for (link of links; track link.href) {
+      <a
+        [href]="link.href"
+        [class.contact-link]="link.href === '#contato'"
+        (click)="menuOpen.set(false)"
+      >
+        {{ link.label }}
+      </a>
+      }
+    </nav>
+  </div>
+</header>

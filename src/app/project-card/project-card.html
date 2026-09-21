@@ -1,0 +1,65 @@
+<article class="project-card" [attr.aria-labelledby]="project().id + '-titulo'">
+  @if (project().image; as image) {
+  <img
+    class="project-image"
+    [src]="image.src"
+    [alt]="image.alt"
+    width="640"
+    height="400"
+    loading="lazy"
+  />
+  }
+  <div class="project-heading">
+    <span class="project-number" aria-hidden="true">{{ number() }}</span>
+    <span class="project-category">{{ project().category }}</span>
+  </div>
+  <h3 [id]="project().id + '-titulo'">{{ project().name }}</h3>
+  <p class="project-description">{{ project().description }}</p>
+  <p class="project-scope">{{ project().scope }}</p>
+  <ul class="tags" aria-label="Tecnologias e conhecimentos utilizados">
+    @for (technology of project().technologies; track technology) {
+    <li>{{ technology }}</li>
+    }
+  </ul>
+  @if (project().repositoryUrl || project().demoUrl || project().designUrl) {
+  <div class="project-links">
+    @if (project().repositoryUrl; as url) {
+    <a
+      [href]="url"
+      target="_blank"
+      rel="noopener noreferrer"
+      [attr.aria-label]="
+            'Repositório de ' + project().name + ' (abre em nova aba)'
+          "
+    >
+      Repositório
+      <span aria-hidden="true">↗</span>
+    </a>
+    } @if (project().demoUrl; as url) {
+    <a
+      [href]="url"
+      target="_blank"
+      rel="noopener noreferrer"
+      [attr.aria-label]="
+            'Demonstração de ' + project().name + ' (abre em nova aba)'
+          "
+    >
+      Demonstração
+      <span aria-hidden="true">↗</span>
+    </a>
+    } @if (project().designUrl; as url) {
+    <a
+      [href]="url"
+      target="_blank"
+      rel="noopener noreferrer"
+      [attr.aria-label]="
+            'Protótipo de ' + project().name + ' no Figma (abre em nova aba)'
+          "
+    >
+      Ver no Figma
+      <span aria-hidden="true">↗</span>
+    </a>
+    }
+  </div>
+  }
+</article>
