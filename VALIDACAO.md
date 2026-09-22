@@ -24,7 +24,7 @@ A análise automatizada deixou o contraste das setas decorativas para conferênc
 
 Os testes de celular usam o Microsoft Edge com emulação de tamanho de tela, densidade e interação por toque. Eles não substituem a conferência final em um aparelho físico, que depende de acesso a esse aparelho.
 
-A compilação final gerou **164,48 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **47,46 kB**.
+A compilação final gerou **164,49 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **47,44 kB**.
 
 ## Conteúdo conferido
 

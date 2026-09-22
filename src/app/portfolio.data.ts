@@ -164,7 +164,7 @@ export const certifications: readonly Certification[] = [
     name: "Payment Orchestration Layer · Back End Developer",
     institution: "Zetheta Algorithms · 15 dias equivalentes",
     year: "Agosto de 2026",
-    url: "/certificados/payment-orchestration-zetheta.pdf",
+    url: "/certificados/payment-orchestration-zetheta-normalizado.pdf",
   },
   {
     name: "Projetos de Sistemas de TI",
