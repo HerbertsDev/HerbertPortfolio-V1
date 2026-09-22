@@ -17,14 +17,15 @@ Verificações executadas em 21 de setembro de 2026.
 | Idioma e metadados | `pt-BR`, título, descrição, URL canônica e Open Graph conferidos |
 | Análise automatizada de acessibilidade | Axe-core 4.13.0, regras WCAG A/AA selecionadas: 0 violações detectadas em computador e celular |
 | Revisão visual | Capturas completas conferidas em 1440 e 390 pixels |
+| Alvos de toque | Links e botões visíveis com altura mínima de 44 pixels em computador e celular |
 | Dependências | Apenas Angular e suas dependências em execução; ferramentas de compilação e Playwright em desenvolvimento |
 | Publicação | Site público no endereço indicado no README |
 
-A análise automatizada deixou o contraste das setas decorativas para conferência manual. As setas usam a cor `#b0b3bb` sobre `#151719`, com contraste calculado de **8,57:1**.
+O azul principal `#0066cc` apresenta contraste de **5,57:1** sobre branco e **5,11:1** sobre o fundo `#f5f5f7`.
 
 Os testes de celular usam o Microsoft Edge com emulação de tamanho de tela, densidade e interação por toque. Eles não substituem a conferência final em um aparelho físico, que depende de acesso a esse aparelho.
 
-A compilação final gerou **164,63 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **47,56 kB**.
+A compilação final gerou **169,19 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **48,21 kB**.
 
 ## Conteúdo conferido
 

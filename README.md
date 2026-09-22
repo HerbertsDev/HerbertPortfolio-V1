@@ -1,12 +1,13 @@
 # Portfólio de Herbert da Silva da Cruz
 
-Portfólio profissional em português brasileiro, voltado à apresentação de projetos e à busca de estágio em desenvolvimento de software. Desenvolvido com Angular, TypeScript e SCSS, com tema escuro, azul discreto e seis seções: início, sobre mim, tecnologias, projetos, experiência e formação, e contato.
+Portfólio profissional em português brasileiro, voltado à apresentação de projetos e à busca de estágio em desenvolvimento de software. Desenvolvido com Angular, TypeScript e SCSS, com tema claro, azul discreto e seis seções: início, sobre mim, tecnologias, projetos, experiência e formação, e contato.
 
 ## Tecnologias e decisões
 
 - Angular 22.1.7, com componentes standalone e verificação estrita de tipos e templates.
 - TypeScript 6.0.3 e SCSS.
 - HTML semântico, navegação por âncoras e fontes do sistema, sem requisições externas de fontes.
+- Direção visual inspirada nos fundamentos de design para iOS: hierarquia tipográfica clara, superfícies agrupadas, espaçamento consistente, cabeçalho translúcido e controles com área de toque mínima de 44 pixels.
 - Playwright apenas para testes de navegação e responsividade; não é incluído no site publicado.
 - Sem backend, banco de dados, autenticação, biblioteca de ícones ou animações. O contato usa `mailto:` e abre o aplicativo de e-mail configurado pelo visitante.
 - Sem roteador: todo o conteúdo está em uma única página.
