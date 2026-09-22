@@ -4,10 +4,9 @@ Portfólio profissional desenvolvido com Angular e TypeScript para apresentar mi
 
 ![Prévia do portfólio de Herbert da Silva da Cruz](.github/assets/portfolio-preview.png)
 
-## Versões publicadas
+## Versão publicada
 
-- [Versão principal](https://herbert-desenvolvedor.eskeletog3.chatgpt.site/)
-- [GitHub Pages](https://herbertsdev.github.io/herbert-portfolio/)
+- [Acessar o portfólio](https://herbertsdev.github.io/herbert-portfolio/)
 
 ## Tecnologias utilizadas
 
@@ -98,7 +97,7 @@ tests/                    # Testes de interface com Playwright
 
 Cada atualização enviada à branch `main` executa o fluxo de publicação definido em `.github/workflows/deploy-pages.yml`. O build usa o caminho-base `/herbert-portfolio/`, necessário para carregar corretamente os recursos no GitHub Pages.
 
-Essa publicação é independente da versão principal do portfólio e não altera sua hospedagem atual.
+O GitHub Pages é a hospedagem oficial do portfólio. Cada envio para a branch `main` atualiza o site automaticamente.
 
 ## Autor
 
@@ -106,4 +105,4 @@ Essa publicação é independente da versão principal do portfólio e não alte
 
 - [GitHub](https://github.com/HerbertsDev)
 - [LinkedIn](https://www.linkedin.com/in/herbert-da-silva-da-cruz-b001942b0/)
-- [Portfólio](https://herbert-desenvolvedor.eskeletog3.chatgpt.site/)
+- [Portfólio](https://herbertsdev.github.io/herbert-portfolio/)
