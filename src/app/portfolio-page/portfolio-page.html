@@ -19,7 +19,18 @@
           Ver projetos
           <span aria-hidden="true">↗</span>
         </a>
-        <a class="button button-secondary" href="#contato">Entre em contato</a>
+        <a
+          class="button button-secondary"
+          [href]="profile.resumeUrl"
+          download="Curriculo-Herbert-da-Silva-da-Cruz.pdf"
+        >
+          Baixar currículo
+          <span aria-hidden="true">↓</span>
+        </a>
+        <a class="text-link" href="#contato">
+          Contato
+          <span aria-hidden="true">↓</span>
+        </a>
         @if (profile.githubUrl) {
         <a
           class="text-link"
@@ -76,8 +87,8 @@
         class="profile-photo"
         [src]="photo.src"
         [alt]="photo.alt"
-        width="160"
-        height="160"
+        width="180"
+        height="180"
         loading="lazy"
       />
       } @for (paragraph of profile.about; track paragraph) {
@@ -86,6 +97,14 @@
       <div class="about-interest">
         <span class="label">Áreas de interesse</span>
         <p>{{ profile.interests }}</p>
+      </div>
+      <div class="about-languages">
+        <span class="label">Idiomas</span>
+        <ul>
+          @for (language of profile.languages; track language) {
+          <li>{{ language }}</li>
+          }
+        </ul>
       </div>
     </div>
   </section>
@@ -167,7 +186,8 @@
       <div>
         <h3 class="column-heading">Experiência profissional</h3>
         <p class="experience-intro">
-          Atuação profissional em suporte técnico, infraestrutura e tecnologia.
+          Atuação em desenvolvimento back-end, suporte técnico, redes e
+          infraestrutura de TI.
         </p>
         <ol class="experience-list">
           @for (experience of experiences; track experience.company) {
@@ -246,7 +266,7 @@
       <h2 id="titulo-contato">Vamos conversar?</h2>
       <p class="contact-description">
         Busco uma oportunidade de estágio em desenvolvimento de software. Entre
-        em contato para conversarmos sobre uma oportunidade.
+        em contato ou consulte meu currículo para conhecer minha trajetória.
       </p>
       <p class="contact-location">{{ profile.location }}</p>
     </div>
@@ -256,6 +276,14 @@
         <span aria-hidden="true">↗</span>
       </a>
       <a class="email-address" [href]="emailUrl">{{ profile.email }}</a>
+      <a
+        class="resume-link"
+        [href]="profile.resumeUrl"
+        download="Curriculo-Herbert-da-Silva-da-Cruz.pdf"
+      >
+        Baixar currículo
+        <span aria-hidden="true">↓</span>
+      </a>
       @if (socialLinks.length) {
       <div class="social-links">
         @for (link of socialLinks; track link.label) {

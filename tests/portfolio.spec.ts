@@ -14,7 +14,7 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
   );
   await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
   await expect(page).toHaveTitle(
-    "Herbert da Silva da Cruz | Desenvolvedor Full Stack",
+    "Herbert da Silva da Cruz | Desenvolvedor de Software",
   );
   await expect(page.locator('meta[name="description"]')).toHaveAttribute(
     "content",
@@ -34,11 +34,25 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
   );
   await expect(page.locator("#experiencia")).toContainText("Zetheta");
   await expect(page.locator("#experiencia")).toContainText("Foundever");
-  await expect(page.locator("#experiencia")).toContainText("Randstad Brasil");
+  await expect(page.locator("#experiencia")).toContainText("Randstad Digital");
+  await expect(page.locator("#experiencia")).toContainText(
+    "Analista de Redes Jr / Suporte de TI",
+  );
+  await expect(page.locator("#experiencia")).toContainText(
+    "Desenvolvedor Back-End",
+  );
+  await expect(page.locator("#experiencia")).toContainText(
+    "Analista de Suporte Técnico N1",
+  );
   await expect(page.locator("#experiencia")).toContainText(
     "Banco de Dados com SQL",
   );
   await expect(page.locator("#projetos img")).toHaveCount(2);
+  await expect(page.locator(".profile-photo")).toBeVisible();
+  await expect(page.locator(".certification-item")).toHaveCount(6);
+  await expect(
+    page.getByRole("link", { name: "Baixar currículo", exact: true }).first(),
+  ).toHaveAttribute("href", "/curriculo-herbert-da-silva-da-cruz.pdf");
   for (const image of await page.locator("#projetos img").all()) {
     await image.scrollIntoViewIfNeeded();
     await expect(image).toHaveJSProperty("complete", true);
@@ -95,7 +109,7 @@ test("todos os links têm destinos reais e os links não fornecidos ficam oculto
     expect(link.href).not.toBe("#");
     expect(link.targetExists).toBe(true);
     expect(link.href).toMatch(
-      /^(#|mailto:herbertdasilvadacruz@outlook\.com$|https:\/\/github\.com\/HerbertsDev(?:\/[A-Za-z0-9._-]+)?$|https:\/\/www\.linkedin\.com\/in\/herbert-da-silva-da-cruz-b001942b0\/$)/,
+      /^(#|mailto:herbertdasilvadacruz@outlook\.com$|https:\/\/github\.com\/HerbertsDev(?:\/[A-Za-z0-9._-]+)?$|https:\/\/www\.linkedin\.com\/in\/herbert-da-silva-da-cruz-b001942b0\/$|\/curriculo-herbert-da-silva-da-cruz\.pdf$|\/certificados\/[a-z0-9-]+\.(?:pdf|jpg)$)/,
     );
   }
   await expect(

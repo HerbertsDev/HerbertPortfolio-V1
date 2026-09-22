@@ -53,6 +53,9 @@ src/
   main.ts                     Inicialização do Angular
   styles.scss                 Cores, tipografia e estilos compartilhados
 public/
+  certificados/              Certificados disponibilizados no site
+  images/                    Foto, projetos e imagem de compartilhamento
+  curriculo-*.pdf             Currículo para download
   favicon.svg                 Ícone do portfólio
 tests/
   portfolio.spec.ts           Verificações no navegador
@@ -67,7 +70,7 @@ Edite `src/app/portfolio.data.ts`:
 
 | Dado                                                | Configuração                                |
 | --------------------------------------------------- | ------------------------------------------- |
-| Nome, apresentação, localização, e-mail e biografia | `profile`                                   |
+| Nome, apresentação, localização, e-mail, idiomas e currículo | `profile`                          |
 | GitHub e LinkedIn                                   | `profile.githubUrl` e `profile.linkedinUrl` |
 | Curso, instituição, semestre e conclusão prevista   | `education`                                 |
 | Categorias e tecnologias                            | `technologyGroups`                          |
@@ -81,7 +84,9 @@ Para adicionar um projeto, inclua um objeto em `projects`, com `id` único, nome
 
 Os campos `repositoryUrl`, `demoUrl` e `designUrl` são opcionais. Deixe-os ausentes quando não houver uma URL real; os respectivos botões só aparecem quando esses campos são preenchidos. Use endereços completos com `https://` e confirme que podem ser acessados pelo visitante.
 
-Para usar imagens reais, salve os arquivos em `public/images/` e preencha `project.image` ou `profile.photo` com `src` e `alt`. Use um caminho como `/images/arquivo.webp`, forneça uma descrição em português e otimize o arquivo. Os cards reservam uma proporção de 16:9 para imagens; a foto pessoal usa formato quadrado. Não foram criadas imagens fictícias.
+Para usar imagens reais, salve os arquivos em `public/images/` e preencha `project.image` ou `profile.photo` com `src` e `alt`. Use um caminho como `/images/arquivo.webp`, forneça uma descrição em português e otimize o arquivo. Os cards reservam uma proporção de 16:9 para imagens; a foto pessoal usa formato quadrado. A imagem de compartilhamento combina a foto corporativa fornecida com a identidade visual do site.
+
+O currículo fica em `public/curriculo-herbert-da-silva-da-cruz.pdf`. Os certificados ficam em `public/certificados/` e são referenciados pelo campo `url` de cada item em `certifications`.
 
 Em `experiences`, os campos `role` e `description` só aparecem quando preenchidos. A seção de certificados só aparece quando `certifications` contém itens. Não inclua informações confidenciais das empresas.
 
@@ -138,6 +143,7 @@ Essa configuração é uma opção adicional; ela não é necessária para a ver
 - Repositórios públicos do StockFlow e do Simulador da Copa.
 - Imagem do StockFlow publicada pelo autor no LinkedIn.
 - Visão geral exportada do arquivo Figma do protótipo de medicamentos.
-- Certificações e vínculo atual apresentados no LinkedIn.
+- Currículo, foto corporativa e certificados fornecidos pelo autor.
+- Certificações e informações públicas apresentadas no LinkedIn.
 
-O StockFlow é descrito como exercício acadêmico de banco de dados; o projeto de medicamentos é identificado como design e prototipação; não são atribuídas funcionalidades específicas concluídas ao projeto de redes. O repositório citado no post do sistema de chamados e o endereço do portfólio anterior foram omitidos porque retornavam erro 404 durante a revisão.
+O StockFlow é descrito como exercício acadêmico de banco de dados; o projeto de medicamentos é identificado como design e prototipação; e o InfraControl API usa somente o escopo registrado no currículo fornecido. O repositório citado no post do sistema de chamados e o endereço do portfólio anterior foram omitidos porque retornavam erro 404 durante a revisão.

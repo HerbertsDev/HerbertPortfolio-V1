@@ -29,23 +29,28 @@ export interface Certification {
 export const profile = {
   name: "Herbert da Silva da Cruz",
   shortName: "Herbert",
-  title: "Desenvolvedor Full Stack",
+  title: "Desenvolvedor de software · Estudante de ADS",
   email: "herbertdasilvadacruz@outlook.com",
   location: "São Paulo, SP, Brasil",
   availability: "Em busca de uma oportunidade de estágio",
   introduction:
-    "Estudante de Análise e Desenvolvimento de Sistemas no Mackenzie. Desenvolvo projetos para colocar meus conhecimentos em prática e avançar na minha formação.",
+    "Estudante de Análise e Desenvolvimento de Sistemas com experiência em suporte e infraestrutura de TI. Desenvolvo projetos de APIs, interfaces web e bancos de dados.",
   about: [
     "Sou Herbert da Silva da Cruz, estudante de Análise e Desenvolvimento de Sistemas na Universidade Presbiteriana Mackenzie.",
-    "Minha formação inclui projetos práticos de banco de dados, desenvolvimento de software e design de interfaces. Esses trabalhos fazem parte do meu processo de aprendizado.",
-    "Busco uma oportunidade de estágio para contribuir com uma equipe, aprender com outros profissionais e desenvolver minhas habilidades na prática.",
+    "Minha experiência inclui investigação de incidentes, atendimento a usuários, suporte a redes e dispositivos e comunicação entre equipes de infraestrutura e operação.",
+    "Também desenvolvo projetos de back-end, interfaces web, bancos de dados e design de interfaces. Busco um estágio para continuar evoluindo em desenvolvimento de software.",
   ],
   interests:
-    "Desenvolvimento de interfaces, servidores, aplicações completas e aplicativos móveis.",
+    "Desenvolvimento back-end, interfaces web, APIs, bancos de dados e aplicativos móveis.",
+  languages: ["Português nativo", "Inglês técnico", "Espanhol básico"],
   githubUrl: "https://github.com/HerbertsDev",
   linkedinUrl:
     "https://www.linkedin.com/in/herbert-da-silva-da-cruz-b001942b0/",
-  photo: undefined as { src: string; alt: string } | undefined,
+  resumeUrl: "/curriculo-herbert-da-silva-da-cruz.pdf",
+  photo: {
+    src: "/images/herbert-perfil.jpeg",
+    alt: "Retrato profissional de Herbert da Silva da Cruz",
+  },
 };
 
 export const education = {
@@ -58,13 +63,19 @@ export const education = {
 export const technologyGroups = [
   {
     name: "Linguagens",
-    items: ["Python", "Java", "JavaScript", "Dart", "SQL"],
+    items: ["Python", "Java", "JavaScript", "TypeScript", "C#", "Dart", "SQL"],
   },
   { name: "Interfaces web", items: ["Angular", "HTML", "CSS"] },
-  { name: "Desenvolvimento de APIs", items: ["FastAPI", "Spring Boot"] },
+  {
+    name: "Desenvolvimento de APIs",
+    items: ["FastAPI", ".NET", "Spring Boot"],
+  },
   { name: "Aplicativos móveis", items: ["Flutter"] },
-  { name: "Banco de dados", items: ["PostgreSQL"] },
-  { name: "Ferramentas", items: ["Git", "GitHub", "Docker"] },
+  { name: "Banco de dados", items: ["PostgreSQL", "SQL Server"] },
+  {
+    name: "Ferramentas",
+    items: ["Git", "GitHub", "Docker", "Alembic", "Figma"],
+  },
   { name: "Outros conhecimentos", items: ["Inteligência Artificial"] },
 ] as const;
 
@@ -120,46 +131,78 @@ export const projects: readonly Project[] = [
     },
   },
   {
-    id: "monitoramento",
-    name: "Sistema de Monitoramento de Redes",
-    category: "Back-end · Em desenvolvimento",
+    id: "infracontrol",
+    name: "InfraControl API",
+    category: "Back-end · Projeto de estudo",
     description:
-      "Proposta de sistema voltado à coleta e ao processamento de dados para acompanhamento de dispositivos e serviços.",
+      "API para estruturar o gerenciamento inicial de chamados e ativos de TI.",
     scope:
-      "O projeto aparece no perfil do GitHub com foco em APIs, automação e monitoramento. Não há repositório público para validar funcionalidades concluídas.",
-    technologies: ["Python", "FastAPI", "PostgreSQL", "Docker", "AWS"],
+      "Inclui autenticação com JWT, endpoints de usuários e de saúde da aplicação, migrações com Alembic e dados iniciais para chamados e ativos.",
+    technologies: ["Python", "FastAPI", "SQL Server", "Alembic", "Docker"],
   },
 ];
 
 // Empresas e períodos informados. Cargos e descrições são opcionais.
 export const experiences: readonly Experience[] = [
   {
-    company: "Randstad Brasil",
-    period: "Atual",
-    role: "Suporte técnico e infraestrutura de TI",
+    company: "Mercado Livre, via Randstad Digital",
+    period: "Abril de 2026 — Setembro de 2026",
+    role: "Analista de Redes Jr / Suporte de TI",
+    description:
+      "Investigação de incidentes de rede, acessos e dispositivos em suporte presencial e remoto, com acompanhamento de chamados e SLAs. Colaboração com equipes de infraestrutura e operação, comunicação de diagnósticos e documentação de soluções.",
   },
   {
     company: "Zetheta Algorithms Private Limited",
     period: "Julho de 2026 — Agosto de 2026",
+    role: "Desenvolvedor Back-End · Programa remoto por projetos",
+    description:
+      "Desenvolvimento de componentes de back-end e APIs REST para fluxos de pagamento no projeto Payment Orchestration Layer, utilizando Python, FastAPI e SQL. Organização de entregáveis e documentação técnica em colaboração remota.",
   },
-  { company: "Foundever", period: "Abril de 2024 — Fevereiro de 2025" },
+  {
+    company: "Foundever · Operação Dell Technologies",
+    period: "Abril de 2024 — Fevereiro de 2025",
+    role: "Analista de Suporte Técnico N1",
+    description:
+      "Atendimento a clientes em suporte técnico, investigação de problemas, verificação de garantias e acompanhamento de cada caso até o encaminhamento.",
+  },
 ];
 
 export const certifications: readonly Certification[] = [
   {
+    name: "Foundation Design iOS",
+    institution: "Mackenzie Open Academy · 24 horas",
+    year: "Setembro de 2026",
+    url: "/certificados/foundation-design-ios.pdf",
+  },
+  {
+    name: "Payment Orchestration Layer · Back End Developer",
+    institution: "Zetheta Algorithms · 15 dias equivalentes",
+    year: "Agosto de 2026",
+    url: "/certificados/payment-orchestration-zetheta.pdf",
+  },
+  {
+    name: "Projetos de Sistemas de TI",
+    institution: "Fundação Bradesco · 15 horas",
+    year: "Junho de 2026",
+    url: "/certificados/projetos-sistemas-ti-fundacao-bradesco.jpg",
+  },
+  {
     name: "Programação C# — Módulo IV",
-    institution: "Microlins",
+    institution: "Microlins · 16 horas",
     year: "Julho de 2023",
+    url: "/certificados/programacao-csharp-modulo-iv-microlins.jpg",
   },
   {
     name: "Banco de Dados com SQL",
-    institution: "Microlins",
+    institution: "Microlins · 16 horas",
     year: "Abril de 2023",
+    url: "/certificados/banco-dados-sql-microlins.jpg",
   },
   {
     name: "Lógica de Programação",
-    institution: "Microlins",
+    institution: "Microlins · 12 horas",
     year: "Abril de 2023",
+    url: "/certificados/logica-programacao-microlins.jpg",
   },
 ];
 

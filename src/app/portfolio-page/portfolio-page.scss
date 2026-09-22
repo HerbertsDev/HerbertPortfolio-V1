@@ -149,12 +149,27 @@ h2 {
   margin: 7px 0 0;
   color: var(--muted);
 }
+.about-languages {
+  margin-top: 28px;
+}
+.about-languages ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
 .profile-photo {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
+  object-position: center 38%;
   border-radius: 6px;
-  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
 }
 .technology-grid {
   display: grid;
@@ -264,6 +279,14 @@ h4 {
   margin: 10px 0 0;
   color: var(--muted);
 }
+.experience-role {
+  color: var(--text);
+  font-weight: 500;
+}
+.experience-description {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
 .education-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -359,6 +382,10 @@ dd {
   color: var(--muted);
   font-size: 0.875rem;
   overflow-wrap: anywhere;
+}
+.resume-link {
+  color: var(--accent);
+  font-size: 0.875rem;
 }
 .social-links {
   display: flex;
