@@ -48,9 +48,9 @@ export const profile = {
   githubUrl: "https://github.com/HerbertsDev",
   linkedinUrl:
     "https://www.linkedin.com/in/herbert-da-silva-da-cruz-b001942b0/",
-  resumeUrl: "/curriculo-herbert-da-silva-da-cruz.pdf",
+  resumeUrl: "curriculo-herbert-da-silva-da-cruz.pdf",
   photo: {
-    src: "/images/herbert-perfil.jpeg",
+    src: "images/herbert-perfil.jpeg",
     alt: "Retrato profissional de Herbert da Silva da Cruz",
   },
 };
@@ -103,7 +103,7 @@ export const projects: readonly Project[] = [
     technologies: ["PostgreSQL 17", "SQL", "pgAdmin 4", "Git"],
     repositoryUrl: "https://github.com/HerbertsDev/StockFlow-database",
     image: {
-      src: "/images/stockflow-linkedin.jpg",
+      src: "images/stockflow-linkedin.jpg",
       alt: "Consulta SQL do StockFlow no pgAdmin, com um produto retornado na tabela de resultados",
     },
   },
@@ -118,7 +118,7 @@ export const projects: readonly Project[] = [
     technologies: ["Python 3", "SQLite", "SQL"],
     repositoryUrl: "https://github.com/HerbertsDev/Simulador-de-Copa-2026",
     image: {
-      src: "/images/simulador-copa-github.png",
+      src: "images/simulador-copa-github.png",
       alt: "Saída do Simulador da Copa 2026 no terminal, com resultados das fases e Senegal como campeão",
     },
   },
@@ -134,7 +134,7 @@ export const projects: readonly Project[] = [
     designUrl:
       "https://www.figma.com/design/XKu1AvIUDeFM1mndTBAd8G/Projeto-de-modelo-de-interface-de-app-IOS--UX---UI-?t=RT19KbLECdbJCqcl-1",
     image: {
-      src: "/images/medicamentos-prototipo.png",
+      src: "images/medicamentos-prototipo.png",
       alt: "Quatro telas do protótipo iOS: medicamentos do dia, detalhes, cadastro de lembrete e confirmação",
     },
   },
@@ -170,37 +170,37 @@ export const certifications: readonly Certification[] = [
     name: "Foundation Design iOS",
     institution: "Mackenzie Open Academy · 24 horas",
     year: "Setembro de 2026",
-    url: "/certificados/foundation-design-ios.pdf",
+    url: "certificados/foundation-design-ios.pdf",
   },
   {
     name: "Payment Orchestration Layer · Back End Developer",
     institution: "Zetheta Algorithms · 15 dias equivalentes",
     year: "Agosto de 2026",
-    url: "/certificados/payment-orchestration-zetheta-normalizado.pdf",
+    url: "certificados/payment-orchestration-zetheta-normalizado.pdf",
   },
   {
     name: "Projetos de Sistemas de TI",
     institution: "Fundação Bradesco · 15 horas",
     year: "Junho de 2026",
-    url: "/certificados/projetos-sistemas-ti-fundacao-bradesco.jpg",
+    url: "certificados/projetos-sistemas-ti-fundacao-bradesco.jpg",
   },
   {
     name: "Programação C# — Módulo IV",
     institution: "Microlins · 16 horas",
     year: "Julho de 2023",
-    url: "/certificados/programacao-csharp-modulo-iv-microlins.jpg",
+    url: "certificados/programacao-csharp-modulo-iv-microlins.jpg",
   },
   {
     name: "Banco de Dados com SQL",
     institution: "Microlins · 16 horas",
     year: "Abril de 2023",
-    url: "/certificados/banco-dados-sql-microlins.jpg",
+    url: "certificados/banco-dados-sql-microlins.jpg",
   },
   {
     name: "Lógica de Programação",
     institution: "Microlins · 12 horas",
     year: "Abril de 2023",
-    url: "/certificados/logica-programacao-microlins.jpg",
+    url: "certificados/logica-programacao-microlins.jpg",
   },
 ];
 

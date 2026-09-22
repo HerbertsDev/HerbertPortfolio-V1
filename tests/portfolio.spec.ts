@@ -67,7 +67,7 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
   await expect(page.locator(".certification-item")).toHaveCount(6);
   await expect(
     page.getByRole("link", { name: "Baixar currículo", exact: true }).first(),
-  ).toHaveAttribute("href", "/curriculo-herbert-da-silva-da-cruz.pdf");
+  ).toHaveAttribute("href", "curriculo-herbert-da-silva-da-cruz.pdf");
   for (const image of await page.locator("#projetos img").all()) {
     await image.scrollIntoViewIfNeeded();
     await expect(image).toHaveJSProperty("complete", true);
@@ -135,7 +135,7 @@ test("todos os links têm destinos reais e os links não fornecidos ficam oculto
     expect(link.href).not.toBe("#");
     expect(link.targetExists).toBe(true);
     expect(link.href).toMatch(
-      /^(#|mailto:herbertdasilvadacruz@outlook\.com$|tel:\+5511914198063$|https:\/\/github\.com\/HerbertsDev(?:\/[A-Za-z0-9._-]+)?$|https:\/\/www\.linkedin\.com\/in\/herbert-da-silva-da-cruz-b001942b0\/$|https:\/\/www\.figma\.com\/design\/XKu1AvIUDeFM1mndTBAd8G\/Projeto-de-modelo-de-interface-de-app-IOS--UX---UI-\?t=RT19KbLECdbJCqcl-1$|\/curriculo-herbert-da-silva-da-cruz\.pdf$|\/certificados\/[a-z0-9-]+\.(?:pdf|jpg)$)/,
+      /^(#|mailto:herbertdasilvadacruz@outlook\.com$|tel:\+5511914198063$|https:\/\/github\.com\/HerbertsDev(?:\/[A-Za-z0-9._-]+)?$|https:\/\/www\.linkedin\.com\/in\/herbert-da-silva-da-cruz-b001942b0\/$|https:\/\/www\.figma\.com\/design\/XKu1AvIUDeFM1mndTBAd8G\/Projeto-de-modelo-de-interface-de-app-IOS--UX---UI-\?t=RT19KbLECdbJCqcl-1$|curriculo-herbert-da-silva-da-cruz\.pdf$|certificados\/[a-z0-9-]+\.(?:pdf|jpg)$)/,
     );
   }
   await expect(

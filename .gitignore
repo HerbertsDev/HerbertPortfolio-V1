@@ -6,8 +6,11 @@
 /playwright-report/
 /.vercel/
 /.sites-runtime/
+/coverage/
+*.tsbuildinfo
 .env
 .env.*
+!.env.example
 *.log
 .DS_Store
 Thumbs.db
