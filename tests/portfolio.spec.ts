@@ -25,7 +25,7 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
     "pt_BR",
   );
   await expect(page.locator("main section")).toHaveCount(6);
-  await expect(page.locator("#projetos article")).toHaveCount(5);
+  await expect(page.locator("#projetos article")).toHaveCount(3);
   await expect(
     page.getByRole("heading", { name: "StockFlow Database" }),
   ).toBeVisible();
@@ -47,7 +47,7 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
   await expect(page.locator("#experiencia")).toContainText(
     "Banco de Dados com SQL",
   );
-  await expect(page.locator("#projetos img")).toHaveCount(2);
+  await expect(page.locator("#projetos img")).toHaveCount(3);
   await expect(page.locator(".profile-photo")).toBeVisible();
   await expect(page.locator(".certification-item")).toHaveCount(6);
   await expect(
@@ -109,12 +109,16 @@ test("todos os links têm destinos reais e os links não fornecidos ficam oculto
     expect(link.href).not.toBe("#");
     expect(link.targetExists).toBe(true);
     expect(link.href).toMatch(
-      /^(#|mailto:herbertdasilvadacruz@outlook\.com$|https:\/\/github\.com\/HerbertsDev(?:\/[A-Za-z0-9._-]+)?$|https:\/\/www\.linkedin\.com\/in\/herbert-da-silva-da-cruz-b001942b0\/$|\/curriculo-herbert-da-silva-da-cruz\.pdf$|\/certificados\/[a-z0-9-]+\.(?:pdf|jpg)$)/,
+      /^(#|mailto:herbertdasilvadacruz@outlook\.com$|tel:\+5511914198063$|https:\/\/github\.com\/HerbertsDev(?:\/[A-Za-z0-9._-]+)?$|https:\/\/www\.linkedin\.com\/in\/herbert-da-silva-da-cruz-b001942b0\/$|\/curriculo-herbert-da-silva-da-cruz\.pdf$|\/certificados\/[a-z0-9-]+\.(?:pdf|jpg)$)/,
     );
   }
   await expect(
     page.getByRole("link", { name: "Enviar e-mail", exact: false }),
   ).toHaveAttribute("href", "mailto:herbertdasilvadacruz@outlook.com");
+  await expect(page.getByRole("link", { name: "(11) 91419-8063" })).toHaveAttribute(
+    "href",
+    "tel:+5511914198063",
+  );
   await expect(page.locator("#projetos a")).toHaveCount(2);
   await expect(
     page.getByRole("link", { name: "GitHub (abre em nova aba)" }).first(),

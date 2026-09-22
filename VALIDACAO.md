@@ -10,7 +10,8 @@ Verificações executadas em 21 de setembro de 2026.
 | Texto ampliado | 200% em tela de 390 pixels, sem transbordamento horizontal |
 | Navegação | Âncoras válidas, menu móvel, Escape, foco e atalho para o conteúdo aprovados |
 | Links | GitHub, LinkedIn, e-mail, currículo, certificados e repositórios conferidos; endereços antigos com erro 404 foram omitidos |
-| Imagens | Foto corporativa fornecida, StockFlow obtida no LinkedIn, protótipo extraído do Figma e imagem social própria |
+| Imagens | Foto corporativa fornecida, StockFlow obtida no LinkedIn, Simulador obtido no GitHub, protótipo extraído do Figma e imagem social própria |
+| Certificado da Zetheta | Página normalizada para 840 × 510 pontos e renderização visual conferida |
 | Movimento reduzido | Rolagem suave desativada quando solicitada pelo sistema |
 | Erros de execução | Nenhum erro de página ou de console detectado nos testes |
 | Idioma e metadados | `pt-BR`, título, descrição, URL canônica e Open Graph conferidos |
@@ -23,17 +24,16 @@ A análise automatizada deixou o contraste das setas decorativas para conferênc
 
 Os testes de celular usam o Microsoft Edge com emulação de tamanho de tela, densidade e interação por toque. Eles não substituem a conferência final em um aparelho físico, que depende de acesso a esse aparelho.
 
-A compilação final gerou **164,99 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **47,62 kB**.
+A compilação final gerou **164,48 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **47,46 kB**.
 
 ## Conteúdo conferido
 
 - As seis seções solicitadas estão presentes.
 - A busca por estágio aparece no início e permanece visível na composição para celular.
 - A apresentação, a instituição, o curso, a previsão de conclusão, as empresas, os cargos, os períodos, as responsabilidades, os idiomas e o contato correspondem ao currículo e aos documentos fornecidos.
-- Os cinco projetos têm escopos identificados como desenvolvimento, banco de dados ou prototipação, conforme as fontes disponíveis.
+- Os três projetos selecionados têm escopos identificados como desenvolvimento, banco de dados ou prototipação, conforme as fontes disponíveis.
 - StockFlow e Simulador da Copa 2026 apontam para repositórios públicos válidos.
-- O sistema de chamados foi descrito a partir da publicação pública do autor; o repositório antigo não foi exibido porque retornava erro 404.
-- O InfraControl API é descrito somente com as funcionalidades registradas no currículo fornecido.
+- O Sistema de Chamados e o InfraControl API foram removidos porque não possuem repositórios públicos disponíveis.
 - O currículo, a foto corporativa e os seis certificados possuem arquivos reais publicados no próprio site.
 - Nenhum resultado, métrica ou link foi inventado.
 - A atualização de conteúdo está concentrada em `src/app/portfolio.data.ts`; SEO e contato sem JavaScript ficam em `src/index.html`.

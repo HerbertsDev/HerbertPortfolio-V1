@@ -69,7 +69,8 @@ h3 {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
+  background: #121417;
   border-radius: 3px;
   margin-bottom: 26px;
 }

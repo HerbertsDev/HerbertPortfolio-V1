@@ -31,6 +31,8 @@ export const profile = {
   shortName: "Herbert",
   title: "Desenvolvedor de software · Estudante de ADS",
   email: "herbertdasilvadacruz@outlook.com",
+  phone: "(11) 91419-8063",
+  phoneUrl: "tel:+5511914198063",
   location: "São Paulo, SP, Brasil",
   availability: "Em busca de uma oportunidade de estágio",
   introduction:
@@ -105,16 +107,10 @@ export const projects: readonly Project[] = [
       "Simula oitavas, quartas, semifinais e final, decide empates nos pênaltis e armazena resultados em SQLite para consultas posteriores em SQL.",
     technologies: ["Python 3", "SQLite", "SQL"],
     repositoryUrl: "https://github.com/HerbertsDev/Simulador-de-Copa-2026",
-  },
-  {
-    id: "chamados",
-    name: "Gestão de Chamados e Incidentes de TI",
-    category: "Aplicação web · Projeto de estudo",
-    description:
-      "Sistema web para organizar demandas, acompanhar registros operacionais e visualizar indicadores em um painel.",
-    scope:
-      "O fluxo inclui acesso à plataforma, formulários, tabelas, cartões e gráficos. Os dados são estruturados com arrays e objetos e persistidos localmente no navegador.",
-    technologies: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+    image: {
+      src: "/images/simulador-copa-github.png",
+      alt: "Saída do Simulador da Copa 2026 no terminal, com resultados das fases e Senegal como campeão",
+    },
   },
   {
     id: "medicamentos",
@@ -129,16 +125,6 @@ export const projects: readonly Project[] = [
       src: "/images/medicamentos-prototipo.png",
       alt: "Quatro telas do protótipo iOS: medicamentos do dia, detalhes, cadastro de lembrete e confirmação",
     },
-  },
-  {
-    id: "infracontrol",
-    name: "InfraControl API",
-    category: "Back-end · Projeto de estudo",
-    description:
-      "API para estruturar o gerenciamento inicial de chamados e ativos de TI.",
-    scope:
-      "Inclui autenticação com JWT, endpoints de usuários e de saúde da aplicação, migrações com Alembic e dados iniciais para chamados e ativos.",
-    technologies: ["Python", "FastAPI", "SQL Server", "Alembic", "Docker"],
   },
 ];
 

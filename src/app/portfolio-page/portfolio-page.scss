@@ -378,7 +378,8 @@ dd {
   gap: 18px;
   min-width: 0;
 }
-.email-address {
+.email-address,
+.phone-number {
   color: var(--muted);
   font-size: 0.875rem;
   overflow-wrap: anywhere;

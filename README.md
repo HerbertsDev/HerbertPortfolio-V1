@@ -142,8 +142,9 @@ Essa configuração é uma opção adicional; ela não é necessária para a ver
 - Perfil público do LinkedIn: `https://www.linkedin.com/in/herbert-da-silva-da-cruz-b001942b0/`.
 - Repositórios públicos do StockFlow e do Simulador da Copa.
 - Imagem do StockFlow publicada pelo autor no LinkedIn.
+- Captura de execução publicada no README do Simulador da Copa.
 - Visão geral exportada do arquivo Figma do protótipo de medicamentos.
 - Currículo, foto corporativa e certificados fornecidos pelo autor.
 - Certificações e informações públicas apresentadas no LinkedIn.
 
-O StockFlow é descrito como exercício acadêmico de banco de dados; o projeto de medicamentos é identificado como design e prototipação; e o InfraControl API usa somente o escopo registrado no currículo fornecido. O repositório citado no post do sistema de chamados e o endereço do portfólio anterior foram omitidos porque retornavam erro 404 durante a revisão.
+O StockFlow é descrito como exercício acadêmico de banco de dados e o projeto de medicamentos é identificado como design e prototipação. O Sistema de Chamados e o InfraControl API foram retirados da seleção porque não possuem repositórios públicos disponíveis. O endereço do portfólio anterior também foi omitido porque retornava erro 404 durante a revisão.
