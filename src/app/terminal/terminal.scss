@@ -1,0 +1,161 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.terminal-window {
+  overflow: hidden;
+  width: 100%;
+  min-height: 352px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  background: rgba(8, 11, 18, 0.94);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(0, 0, 0, 0.28);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+}
+
+.terminal-titlebar {
+  position: relative;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(48, 51, 60, 0.92);
+}
+
+.traffic-lights {
+  position: absolute;
+  left: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.traffic-lights span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.28);
+}
+
+.close {
+  background: #ff5f57;
+}
+
+.minimize {
+  background: #febc2e;
+}
+
+.maximize {
+  background: #28c840;
+}
+
+.terminal-title {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.terminal-screen {
+  min-height: 310px;
+  padding: 19px 21px 22px;
+  overflow: hidden;
+  color: #e9eefb;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(0.7rem, 1.12vw, 0.84rem);
+  line-height: 1.62;
+}
+
+.terminal-entry {
+  margin-bottom: 9px;
+}
+
+.command-line {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.command-line > span + span {
+  margin-left: 0.38rem;
+}
+
+.prompt {
+  color: #6ee7b7;
+}
+
+.path {
+  color: #7dd3fc;
+}
+
+.symbol {
+  color: #c4b5fd;
+}
+
+.terminal-output {
+  display: grid;
+  color: rgba(238, 243, 255, 0.8);
+  padding-left: 0.1rem;
+}
+
+.terminal-output span:first-child {
+  color: #ffffff;
+}
+
+.active-command {
+  min-height: 1.62em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.56em;
+  height: 1.04em;
+  margin-left: 0.35rem !important;
+  vertical-align: -0.14em;
+  background: #8be9fd;
+  animation: cursor-blink 1s steps(2, start) infinite;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: pre-wrap;
+  border: 0;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .terminal-window {
+    min-height: 330px;
+    border-radius: 16px;
+  }
+
+  .terminal-screen {
+    min-height: 288px;
+    padding: 17px 16px 20px;
+    font-size: clamp(0.64rem, 2.65vw, 0.76rem);
+  }
+
+  .terminal-title {
+    font-size: 0.69rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}

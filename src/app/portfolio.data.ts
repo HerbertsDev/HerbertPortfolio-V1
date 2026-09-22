@@ -29,14 +29,14 @@ export interface Certification {
 export const profile = {
   name: "Herbert da Silva da Cruz",
   shortName: "Herbert",
-  title: "Desenvolvedor de software · Estudante de ADS",
+  title: "Desenvolvedor de Software | Full Stack",
   email: "herbertdasilvadacruz@outlook.com",
   phone: "(11) 91419-8063",
   phoneUrl: "tel:+5511914198063",
   location: "São Paulo, SP, Brasil",
   availability: "Em busca de uma oportunidade de estágio",
   introduction:
-    "Estudante de Análise e Desenvolvimento de Sistemas com experiência em suporte e infraestrutura de TI. Desenvolvo projetos de APIs, interfaces web e bancos de dados.",
+    "Transformo aprendizado em software: APIs, interfaces web e bancos de dados construídos com clareza e atenção à experiência de quem usa.",
   about: [
     "Sou Herbert da Silva da Cruz, estudante de Análise e Desenvolvimento de Sistemas na Universidade Presbiteriana Mackenzie.",
     "Minha experiência inclui investigação de incidentes, atendimento a usuários, suporte a redes e dispositivos e comunicação entre equipes de infraestrutura e operação.",
@@ -65,23 +65,33 @@ export const education = {
 export const technologyGroups = [
   {
     name: "Linguagens",
-    items: ["Python", "Java", "JavaScript", "TypeScript", "C#", "Dart", "SQL"],
+    items: ["Python", "Java", "JavaScript", "TypeScript", "Dart", "C#"],
   },
-  { name: "Interfaces web", items: ["Angular", "HTML", "CSS"] },
   {
-    name: "Desenvolvimento de APIs",
-    items: ["FastAPI", ".NET", "Spring Boot"],
+    name: "Frameworks",
+    items: ["Angular", "FastAPI", "Spring Boot", "Flutter", ".NET"],
   },
-  { name: "Aplicativos móveis", items: ["Flutter"] },
-  { name: "Banco de dados", items: ["PostgreSQL", "SQL Server"] },
+  {
+    name: "Banco de dados",
+    items: ["PostgreSQL", "SQLite", "SQL Server", "SQL"],
+  },
   {
     name: "Ferramentas",
-    items: ["Git", "GitHub", "Docker", "Alembic", "Figma"],
+    items: ["Git", "GitHub", "Docker", "Figma", "pgAdmin"],
   },
-  { name: "Outros conhecimentos", items: ["Inteligência Artificial"] },
 ] as const;
 
 export const projects: readonly Project[] = [
+  {
+    id: "payment-orchestration",
+    name: "Payment Orchestration Layer",
+    category: "Back-end · Programa remoto por projetos",
+    description:
+      "Componentes de back-end e APIs REST para fluxos de pagamento, desenvolvidos durante um programa prático da Zetheta Algorithms.",
+    scope:
+      "Trabalho concentrado na implementação com Python, FastAPI e SQL, organização dos entregáveis e documentação técnica em colaboração remota.",
+    technologies: ["Python", "FastAPI", "SQL", "APIs REST"],
+  },
   {
     id: "stockflow",
     name: "StockFlow Database",

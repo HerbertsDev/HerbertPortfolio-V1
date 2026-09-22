@@ -1,205 +1,120 @@
 <div class="container">
-  <section
-    id="inicio"
-    class="hero"
-    aria-labelledby="titulo-inicio"
-    tabindex="-1"
-  >
+  <section id="inicio" class="hero" aria-labelledby="titulo-inicio" tabindex="-1">
+    <div class="hero-media" aria-hidden="true">
+      <img src="/images/macbook-workspace.png" alt="" width="1672" height="941" fetchpriority="high" />
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+
     <div class="hero-main">
-      <p class="eyebrow">{{ profile.title }}</p>
-      <h1 id="titulo-inicio">
-        Olá, eu sou
-        <br />
-        <span>{{ profile.shortName }}.</span>
-      </h1>
+      <p class="availability-pill"><span aria-hidden="true"></span>{{ profile.availability }}</p>
+      <p class="eyebrow">Portfólio · São Paulo</p>
+      <h1 id="titulo-inicio">{{ profile.name }}</h1>
+      <p class="hero-role">{{ profile.title }}</p>
       <p class="hero-description">{{ profile.introduction }}</p>
-      <p class="hero-availability">{{ profile.availability }}</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="#projetos">
-          Ver projetos
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a
-          class="button button-secondary"
-          [href]="profile.resumeUrl"
-          download="Curriculo-Herbert-da-Silva-da-Cruz.pdf"
-        >
-          Baixar currículo
-          <span aria-hidden="true">↓</span>
-        </a>
-        <a class="text-link" href="#contato">
-          Contato
-          <span aria-hidden="true">↓</span>
-        </a>
-        @if (profile.githubUrl) {
-        <a
-          class="text-link"
-          [href]="profile.githubUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub (abre em nova aba)"
-        >
-          GitHub
-          <span aria-hidden="true">↗</span>
-        </a>
-        }
+        <a class="button button-primary" href="#projetos">Conhecer projetos <span aria-hidden="true">↓</span></a>
+        <a class="button button-secondary" href="#contato">Entrar em contato <span aria-hidden="true">↗</span></a>
       </div>
     </div>
-    <aside class="hero-aside" aria-label="Formação atual">
-      <span class="aside-label">Em formação</span>
-      <p class="aside-course">{{ education.course }}</p>
-      <p class="aside-institution">{{ education.institution }}</p>
-      <div class="aside-detail">
-        <span>Conclusão prevista</span>
-        <strong>{{ education.completion }}</strong>
-      </div>
-      <p class="availability">{{ profile.availability }}</p>
-    </aside>
+
+    <div class="terminal-stage">
+      <app-terminal />
+      <p>Ambiente de desenvolvimento · sessão ativa</p>
+    </div>
+
     <div class="hero-bottom">
-      <span>{{ profile.location }}</span>
-      <a href="#sobre">
-        Conheça minha trajetória
-        <span aria-hidden="true">↓</span>
+      <span>{{ education.course }} · {{ education.institution }}</span>
+      <a [href]="profile.resumeUrl" download="Curriculo-Herbert-da-Silva-da-Cruz.pdf">
+        Baixar currículo <span aria-hidden="true">↓</span>
       </a>
     </div>
   </section>
 
-  <section
-    id="sobre"
-    class="section about-section"
-    aria-labelledby="titulo-sobre"
-    tabindex="-1"
-  >
+  <section id="sobre" class="section about-section reveal" aria-labelledby="titulo-sobre" tabindex="-1">
     <div class="section-heading">
-      <p class="eyebrow">
-        <span>01</span>
-        Sobre mim
-      </p>
-      <h2 id="titulo-sobre">
-        Aprendizado
-        <br />
-        na prática.
-      </h2>
+      <p class="eyebrow"><span>01</span> Sobre mim</p>
+      <h2 id="titulo-sobre">Tecnologia com contexto humano.</h2>
     </div>
     <div class="about-content">
       @if (profile.photo; as photo) {
-      <img
-        class="profile-photo"
-        [src]="photo.src"
-        [alt]="photo.alt"
-        width="180"
-        height="180"
-        loading="lazy"
-      />
-      } @for (paragraph of profile.about; track paragraph) {
-      <p>{{ paragraph }}</p>
+        <img class="profile-photo" [src]="photo.src" [alt]="photo.alt" width="180" height="180" loading="lazy" />
       }
-      <div class="about-interest">
-        <span class="label">Áreas de interesse</span>
-        <p>{{ profile.interests }}</p>
+      <div class="about-copy">
+        @for (paragraph of profile.about; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
       </div>
-      <div class="about-languages">
-        <span class="label">Idiomas</span>
-        <ul>
-          @for (language of profile.languages; track language) {
-          <li>{{ language }}</li>
-          }
-        </ul>
+      <div class="about-detail">
+        <div>
+          <span class="label">Áreas de interesse</span>
+          <p>{{ profile.interests }}</p>
+        </div>
+        <div>
+          <span class="label">Idiomas</span>
+          <ul>
+            @for (language of profile.languages; track language) {
+              <li>{{ language }}</li>
+            }
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section
-    id="tecnologias"
-    class="section"
-    aria-labelledby="titulo-tecnologias"
-    tabindex="-1"
-  >
+  <section id="tecnologias" class="section reveal" aria-labelledby="titulo-tecnologias" tabindex="-1">
     <div class="section-top">
       <div class="section-heading">
-        <p class="eyebrow">
-          <span>02</span>
-          Tecnologias
-        </p>
-        <h2 id="titulo-tecnologias">Conhecimentos e ferramentas.</h2>
+        <p class="eyebrow"><span>02</span> Tecnologias</p>
+        <h2 id="titulo-tecnologias">Ferramentas que uso e estudo.</h2>
       </div>
-      <p class="section-intro">
-        Tecnologias presentes nos meus estudos e projetos.
-      </p>
+      <p class="section-intro">Conhecimentos aplicados em projetos acadêmicos, estudos e experiências práticas — sem níveis ou porcentagens arbitrárias.</p>
     </div>
     <div class="technology-grid">
       @for (group of technologyGroups; track group.name) {
-      <div class="technology-group">
-        <h3>{{ group.name }}</h3>
-        <ul class="technology-list">
-          @for (item of group.items; track item) {
-          <li>{{ item }}</li>
-          }
-        </ul>
-      </div>
+        <article class="technology-group">
+          <h3>{{ group.name }}</h3>
+          <ul class="technology-list">
+            @for (item of group.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </article>
       }
     </div>
   </section>
 
-  <section
-    id="projetos"
-    class="section projects-section"
-    aria-labelledby="titulo-projetos"
-    tabindex="-1"
-  >
+  <section id="projetos" class="section projects-section reveal" aria-labelledby="titulo-projetos" tabindex="-1">
     <div class="section-top">
       <div class="section-heading">
-        <p class="eyebrow">
-          <span>03</span>
-          Projetos
-        </p>
-        <h2 id="titulo-projetos">Da teoria à construção.</h2>
+        <p class="eyebrow"><span>03</span> Projetos</p>
+        <h2 id="titulo-projetos">Da ideia à implementação.</h2>
       </div>
-      <p class="section-intro">
-        Uma seleção de projetos de desenvolvimento, banco de dados e design.
-      </p>
+      <p class="section-intro">Projetos de back-end, banco de dados, lógica e design de interfaces.</p>
     </div>
     <div class="project-grid">
       @for (project of projects; track project.id; let index = $index) {
-      <app-project-card
-        [project]="project"
-        [number]="(index + 1).toString().padStart(2, '0')"
-      />
+        <app-project-card [project]="project" [number]="(index + 1).toString().padStart(2, '0')" />
       }
     </div>
   </section>
 
-  <section
-    id="experiencia"
-    class="section"
-    aria-labelledby="titulo-experiencia"
-    tabindex="-1"
-  >
+  <section id="experiencia" class="section reveal" aria-labelledby="titulo-experiencia" tabindex="-1">
     <div class="section-heading">
-      <p class="eyebrow">
-        <span>04</span>
-        Experiência e formação
-      </p>
-      <h2 id="titulo-experiencia">Minha trajetória.</h2>
+      <p class="eyebrow"><span>04</span> Experiência e formação</p>
+      <h2 id="titulo-experiencia">Trajetória em construção.</h2>
     </div>
     <div class="trajectory-grid">
       <div>
         <h3 class="column-heading">Experiência profissional</h3>
-        <p class="experience-intro">
-          Atuação em desenvolvimento back-end, suporte técnico, redes e
-          infraestrutura de TI.
-        </p>
+        <p class="experience-intro">Desenvolvimento back-end, suporte técnico, redes e infraestrutura de TI.</p>
         <ol class="experience-list">
           @for (experience of experiences; track experience.company) {
-          <li>
-            <p class="period">{{ experience.period }}</p>
-            <h4>{{ experience.company }}</h4>
-            @if (experience.role) {
-            <p class="experience-role">{{ experience.role }}</p>
-            } @if (experience.description) {
-            <p class="experience-description">{{ experience.description }}</p>
-            }
-          </li>
+            <li>
+              <p class="period">{{ experience.period }}</p>
+              <h4>{{ experience.company }}</h4>
+              @if (experience.role) { <p class="experience-role">{{ experience.role }}</p> }
+              @if (experience.description) { <p class="experience-description">{{ experience.description }}</p> }
+            </li>
           }
         </ol>
       </div>
@@ -210,97 +125,53 @@
           <h4>{{ education.course }}</h4>
           <p>{{ education.institution }}</p>
           <dl>
-            <div>
-              <dt>Semestre</dt>
-              <dd>{{ education.semester }}</dd>
-            </div>
-            <div>
-              <dt>Conclusão prevista</dt>
-              <dd>{{ education.completion }}</dd>
-            </div>
+            <div><dt>Semestre</dt><dd>{{ education.semester }}</dd></div>
+            <div><dt>Conclusão prevista</dt><dd>{{ education.completion }}</dd></div>
           </dl>
         </div>
+
         @if (certifications.length) {
-        <div class="certifications">
-          <h3 class="column-heading">Certificações</h3>
-          <ul>
-            @for (certification of certifications; track certification.name) {
-            <li class="certification-item">
-              <h4>{{ certification.name }}</h4>
-              <p>{{ certification.institution }} · {{ certification.year }}</p>
-              @if (certification.url) {
-              <a
-                [href]="certification.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                [attr.aria-label]="
-                        'Ver certificado de ' +
-                        certification.name +
-                        ' (abre em nova aba)'
-                      "
-              >
-                Ver certificado
-                <span aria-hidden="true">↗</span>
-              </a>
+          <div class="certifications">
+            <h3 class="column-heading">Certificações</h3>
+            <ul>
+              @for (certification of certifications; track certification.name) {
+                <li class="certification-item">
+                  <h4>{{ certification.name }}</h4>
+                  <p>{{ certification.institution }} · {{ certification.year }}</p>
+                  @if (certification.url) {
+                    <a [href]="certification.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Ver certificado de ' + certification.name + ' (abre em nova aba)'">
+                      Ver certificado <span aria-hidden="true">↗</span>
+                    </a>
+                  }
+                </li>
               }
-            </li>
-            }
-          </ul>
-        </div>
+            </ul>
+          </div>
         }
       </div>
     </div>
   </section>
 
-  <section
-    id="contato"
-    class="section contact-section"
-    aria-labelledby="titulo-contato"
-    tabindex="-1"
-  >
+  <section id="contato" class="section contact-section reveal" aria-labelledby="titulo-contato" tabindex="-1">
     <div>
-      <p class="eyebrow">
-        <span>05</span>
-        Contato
-      </p>
-      <h2 id="titulo-contato">Vamos conversar?</h2>
-      <p class="contact-description">
-        Busco uma oportunidade de estágio em desenvolvimento de software. Entre
-        em contato ou consulte meu currículo para conhecer minha trajetória.
-      </p>
+      <p class="eyebrow"><span>05</span> Contato</p>
+      <h2 id="titulo-contato">Vamos construir algo juntos?</h2>
+      <p class="contact-description">Busco uma oportunidade de estágio em desenvolvimento de software. E-mail, LinkedIn e GitHub são os caminhos diretos para conversar.</p>
       <p class="contact-location">{{ profile.location }}</p>
     </div>
     <div class="contact-actions">
-      <a class="button button-primary" [href]="emailUrl">
-        Enviar e-mail
-        <span aria-hidden="true">↗</span>
-      </a>
+      <a class="button button-primary" [href]="emailUrl">Enviar e-mail <span aria-hidden="true">↗</span></a>
       <a class="email-address" [href]="emailUrl">{{ profile.email }}</a>
-      <a class="phone-number" [href]="profile.phoneUrl">
-        {{ profile.phone }}
-      </a>
-      <a
-        class="resume-link"
-        [href]="profile.resumeUrl"
-        download="Curriculo-Herbert-da-Silva-da-Cruz.pdf"
-      >
-        Baixar currículo
-        <span aria-hidden="true">↓</span>
-      </a>
+      <a class="phone-number" [href]="profile.phoneUrl">{{ profile.phone }}</a>
+      <a class="resume-link" [href]="profile.resumeUrl" download="Curriculo-Herbert-da-Silva-da-Cruz.pdf">Baixar currículo <span aria-hidden="true">↓</span></a>
       @if (socialLinks.length) {
-      <div class="social-links">
-        @for (link of socialLinks; track link.label) {
-        <a
-          [href]="link.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          [attr.aria-label]="link.label + ' (abre em nova aba)'"
-        >
-          {{ link.label }}
-          <span aria-hidden="true">↗</span>
-        </a>
-        }
-      </div>
+        <div class="social-links">
+          @for (link of socialLinks; track link.label) {
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="link.label + ' (abre em nova aba)'">
+              {{ link.label }} <span aria-hidden="true">↗</span>
+            </a>
+          }
+        </div>
       }
     </div>
   </section>

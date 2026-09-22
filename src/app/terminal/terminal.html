@@ -1,0 +1,40 @@
+<aside class="terminal-window" aria-label="Terminal com apresentação profissional">
+  <div class="terminal-titlebar" aria-hidden="true">
+    <div class="traffic-lights">
+      <span class="close"></span>
+      <span class="minimize"></span>
+      <span class="maximize"></span>
+    </div>
+    <span class="terminal-title">herbert@macbook — zsh</span>
+  </div>
+
+  <div class="terminal-screen" aria-hidden="true">
+    @for (step of completedSteps(); track step.command) {
+      <div class="terminal-entry">
+        <div class="command-line">
+          <span class="prompt">herbert@macbook</span>
+          <span class="path">~</span>
+          <span class="symbol">%</span>
+          <span>{{ step.command }}</span>
+        </div>
+        <div class="terminal-output">
+          @for (line of step.output; track line) {
+            <span>{{ line }}</span>
+          }
+        </div>
+      </div>
+    }
+
+    <div class="command-line active-command">
+      <span class="prompt">herbert@macbook</span>
+      <span class="path">~</span>
+      <span class="symbol">%</span>
+      @if (!finished()) {
+        <span>{{ activeCommand() }}</span>
+      }
+      <span class="cursor"></span>
+    </div>
+  </div>
+
+  <pre class="sr-only">{{ transcript }}</pre>
+</aside>

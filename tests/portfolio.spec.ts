@@ -10,7 +10,7 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
   });
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    /Olá, eu sou\s*Herbert\./,
+    "Herbert da Silva da Cruz",
   );
   await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
   await expect(page).toHaveTitle(
@@ -29,7 +29,18 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
     /viewport-fit=cover/,
   );
   await expect(page.locator("main section")).toHaveCount(6);
-  await expect(page.locator("#projetos article")).toHaveCount(3);
+  await expect(page.locator("#projetos article")).toHaveCount(4);
+  await expect(page.locator('.hero-media img')).toHaveJSProperty('complete', true);
+  expect(
+    await page.locator('.hero-media img').evaluate((element: HTMLImageElement) => element.naturalWidth),
+  ).toBeGreaterThan(0);
+  await expect(
+    page.getByLabel("Terminal com apresentação profissional"),
+  ).toBeVisible();
+  await page.locator("#projetos").scrollIntoViewIfNeeded();
+  await expect(
+    page.getByRole("heading", { name: "Payment Orchestration Layer", exact: true }),
+  ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "StockFlow Database" }),
   ).toBeVisible();
@@ -155,8 +166,8 @@ test("todos os links têm destinos reais e os links não fornecidos ficam oculto
 test("destaca a busca por estágio no celular", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.locator(".hero-availability")).toBeVisible();
-  await expect(page.locator(".hero-availability")).toHaveText(
+  await expect(page.locator(".availability-pill")).toBeVisible();
+  await expect(page.locator(".availability-pill")).toHaveText(
     "Em busca de uma oportunidade de estágio",
   );
 });
@@ -171,7 +182,7 @@ test("permite pular a navegação usando o teclado", async ({ page }) => {
   await expect(page.locator("main")).toBeFocused();
   await page.keyboard.press("Tab");
   await expect(
-    page.getByRole("link", { name: "Ver projetos", exact: false }),
+    page.getByRole("link", { name: "Conhecer projetos", exact: false }),
   ).toBeFocused();
 });
 
@@ -179,12 +190,15 @@ test("respeita a preferência de movimento reduzido", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await expect(page.locator("#titulo-inicio")).toBeVisible();
+  await expect(page.locator(".terminal-screen")).toContainText("whoami");
+  await expect(page.locator(".terminal-screen")).toContainText("cat stack.txt");
+  await expect(page.locator(".terminal-screen")).toContainText("ls projects/");
   expect(
     await page
       .locator("html")
       .evaluate((element) => getComputedStyle(element).scrollBehavior),
   ).toBe("auto");
-  await page.getByRole("link", { name: "Ver projetos", exact: false }).click();
+  await page.getByRole("link", { name: "Conhecer projetos", exact: false }).click();
   await expect(page.locator("#titulo-projetos")).toBeInViewport();
 });
 
@@ -201,7 +215,7 @@ test("acompanha automaticamente o tema escuro do sistema", async ({ page }) => {
     await page
       .locator("body")
       .evaluate((element) => getComputedStyle(element).backgroundColor),
-  ).toBe("rgb(0, 0, 0)");
+  ).toBe("rgb(7, 9, 16)");
 });
 
 test("mantém o conteúdo dentro da tela, inclusive com texto ampliado", async ({
