@@ -144,6 +144,7 @@ Essa configuração é uma opção adicional; ela não é necessária para a ver
 - Imagem do StockFlow publicada pelo autor no LinkedIn.
 - Captura de execução publicada no README do Simulador da Copa.
 - Visão geral exportada do arquivo Figma do protótipo de medicamentos.
+- Link compartilhável do protótipo de medicamentos no Figma.
 - Currículo, foto corporativa e certificados fornecidos pelo autor.
 - Certificações e informações públicas apresentadas no LinkedIn.
 

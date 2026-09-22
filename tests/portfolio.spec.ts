@@ -109,7 +109,7 @@ test("todos os links têm destinos reais e os links não fornecidos ficam oculto
     expect(link.href).not.toBe("#");
     expect(link.targetExists).toBe(true);
     expect(link.href).toMatch(
-      /^(#|mailto:herbertdasilvadacruz@outlook\.com$|tel:\+5511914198063$|https:\/\/github\.com\/HerbertsDev(?:\/[A-Za-z0-9._-]+)?$|https:\/\/www\.linkedin\.com\/in\/herbert-da-silva-da-cruz-b001942b0\/$|\/curriculo-herbert-da-silva-da-cruz\.pdf$|\/certificados\/[a-z0-9-]+\.(?:pdf|jpg)$)/,
+      /^(#|mailto:herbertdasilvadacruz@outlook\.com$|tel:\+5511914198063$|https:\/\/github\.com\/HerbertsDev(?:\/[A-Za-z0-9._-]+)?$|https:\/\/www\.linkedin\.com\/in\/herbert-da-silva-da-cruz-b001942b0\/$|https:\/\/www\.figma\.com\/design\/XKu1AvIUDeFM1mndTBAd8G\/Projeto-de-modelo-de-interface-de-app-IOS--UX---UI-\?t=RT19KbLECdbJCqcl-1$|\/curriculo-herbert-da-silva-da-cruz\.pdf$|\/certificados\/[a-z0-9-]+\.(?:pdf|jpg)$)/,
     );
   }
   await expect(
@@ -119,7 +119,7 @@ test("todos os links têm destinos reais e os links não fornecidos ficam oculto
     "href",
     "tel:+5511914198063",
   );
-  await expect(page.locator("#projetos a")).toHaveCount(2);
+  await expect(page.locator("#projetos a")).toHaveCount(3);
   await expect(
     page.getByRole("link", { name: "GitHub (abre em nova aba)" }).first(),
   ).toBeVisible();
@@ -127,8 +127,14 @@ test("todos os links têm destinos reais e os links não fornecidos ficam oculto
     page.getByRole("link", { name: "LinkedIn (abre em nova aba)" }).first(),
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: /Figma|Demonstração/ }),
-  ).toHaveCount(0);
+    page.getByRole("link", {
+      name: "Protótipo de Gerenciamento de Medicamentos no Figma (abre em nova aba)",
+    }),
+  ).toHaveAttribute(
+    "href",
+    "https://www.figma.com/design/XKu1AvIUDeFM1mndTBAd8G/Projeto-de-modelo-de-interface-de-app-IOS--UX---UI-?t=RT19KbLECdbJCqcl-1",
+  );
+  await expect(page.getByRole("link", { name: /Demonstração/ })).toHaveCount(0);
 });
 
 test("destaca a busca por estágio no celular", async ({ page }) => {

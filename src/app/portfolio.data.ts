@@ -121,6 +121,8 @@ export const projects: readonly Project[] = [
     scope:
       "O protótipo apresenta lista de medicamentos do dia, detalhes de dose e horário, cadastro de lembretes e confirmação do registro. É um trabalho de UX/UI, sem aplicativo publicado.",
     technologies: ["Figma", "UX/UI", "Design para iOS"],
+    designUrl:
+      "https://www.figma.com/design/XKu1AvIUDeFM1mndTBAd8G/Projeto-de-modelo-de-interface-de-app-IOS--UX---UI-?t=RT19KbLECdbJCqcl-1",
     image: {
       src: "/images/medicamentos-prototipo.png",
       alt: "Quatro telas do protótipo iOS: medicamentos do dia, detalhes, cadastro de lembrete e confirmação",

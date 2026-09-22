@@ -9,7 +9,7 @@ Verificações executadas em 21 de setembro de 2026.
 | Tamanhos de tela | 320, 390, 768, 1024 e 1440 pixels, sem rolagem horizontal |
 | Texto ampliado | 200% em tela de 390 pixels, sem transbordamento horizontal |
 | Navegação | Âncoras válidas, menu móvel, Escape, foco e atalho para o conteúdo aprovados |
-| Links | GitHub, LinkedIn, e-mail, currículo, certificados e repositórios conferidos; endereços antigos com erro 404 foram omitidos |
+| Links | GitHub, LinkedIn, Figma, e-mail, telefone, currículo, certificados e repositórios conferidos; endereços antigos com erro 404 foram omitidos |
 | Imagens | Foto corporativa fornecida, StockFlow obtida no LinkedIn, Simulador obtido no GitHub, protótipo extraído do Figma e imagem social própria |
 | Certificado da Zetheta | Página normalizada para 840 × 510 pontos e renderização visual conferida |
 | Movimento reduzido | Rolagem suave desativada quando solicitada pelo sistema |
@@ -24,7 +24,7 @@ A análise automatizada deixou o contraste das setas decorativas para conferênc
 
 Os testes de celular usam o Microsoft Edge com emulação de tamanho de tela, densidade e interação por toque. Eles não substituem a conferência final em um aparelho físico, que depende de acesso a esse aparelho.
 
-A compilação final gerou **164,49 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **47,44 kB**.
+A compilação final gerou **164,63 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **47,56 kB**.
 
 ## Conteúdo conferido
 
