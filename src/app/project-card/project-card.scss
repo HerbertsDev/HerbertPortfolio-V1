@@ -5,10 +5,10 @@
 
 .project-card {
   height: 100%;
-  padding: 28px;
+  padding: 24px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 22px;
+  border-radius: 20px;
   box-shadow: var(--shadow-small);
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
   align-items: flex-start;
   gap: 18px;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .project-number {
@@ -54,13 +54,13 @@ h3 {
 }
 
 .project-description {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   color: var(--text);
   font-weight: 520;
 }
 
 .project-scope {
-  margin: 0 0 26px;
+  margin: 0 0 24px;
   color: var(--muted);
   font-size: 0.9375rem;
   line-height: 1.68;
@@ -97,26 +97,30 @@ h3 {
   background: var(--accent-soft);
 }
 
+.project-links a:active {
+  background: var(--accent-soft);
+}
+
 .project-image {
   display: block;
-  width: calc(100% + 56px);
+  width: calc(100% + 48px);
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: contain;
   background: var(--surface-secondary);
   border-bottom: 1px solid var(--border);
-  margin: -28px -28px 26px;
+  margin: -24px -24px 24px;
 }
 
 @media (max-width: 600px) {
   .project-card {
-    padding: 22px;
+    padding: 24px;
     border-radius: 18px;
   }
 
   .project-image {
-    width: calc(100% + 44px);
-    margin: -22px -22px 22px;
+    width: calc(100% + 48px);
+    margin: -24px -24px 24px;
   }
 
   .project-heading {

@@ -1,13 +1,14 @@
 # Portfólio de Herbert da Silva da Cruz
 
-Portfólio profissional em português brasileiro, voltado à apresentação de projetos e à busca de estágio em desenvolvimento de software. Desenvolvido com Angular, TypeScript e SCSS, com tema claro, azul discreto e seis seções: início, sobre mim, tecnologias, projetos, experiência e formação, e contato.
+Portfólio profissional em português brasileiro, voltado à apresentação de projetos e à busca de estágio em desenvolvimento de software. Desenvolvido com Angular, TypeScript e SCSS, com tema automático claro ou escuro, azul discreto e seis seções: início, sobre mim, tecnologias, projetos, experiência e formação, e contato.
 
 ## Tecnologias e decisões
 
 - Angular 22.1.7, com componentes standalone e verificação estrita de tipos e templates.
 - TypeScript 6.0.3 e SCSS.
 - HTML semântico, navegação por âncoras e fontes do sistema, sem requisições externas de fontes.
-- Direção visual inspirada nos fundamentos de design para iOS: hierarquia tipográfica clara, superfícies agrupadas, espaçamento consistente, cabeçalho translúcido e controles com área de toque mínima de 44 pixels.
+- Direção visual inspirada nos fundamentos de design para iOS: hierarquia tipográfica clara, superfícies agrupadas, espaçamento em múltiplos de oito, cabeçalho translúcido e controles com área de toque mínima de 44 pixels.
+- Tema definido por `prefers-color-scheme`, barra de navegação inferior no celular, destaque automático da seção visível e suporte às áreas seguras de aparelhos com recorte de tela.
 - Playwright apenas para testes de navegação e responsividade; não é incluído no site publicado.
 - Sem backend, banco de dados, autenticação, biblioteca de ícones ou animações. O contato usa `mailto:` e abre o aplicativo de e-mail configurado pelo visitante.
 - Sem roteador: todo o conteúdo está em uma única página.
@@ -113,7 +114,7 @@ $env:PLAYWRIGHT_CHANNEL = 'msedge'
 npm test
 ```
 
-São verificados: carregamento sem erros no console, seis seções, metadados, menu móvel, fechamento com Escape, restauração de foco, navegação por teclado, destinos das âncoras, contato por e-mail, ausência de links fictícios, movimento reduzido e ausência de rolagem horizontal entre 320 e 1440 pixels, incluindo texto ampliado a 200%.
+São verificados: carregamento sem erros no console, seis seções, metadados, barras de navegação responsivas, indicação da seção ativa, navegação por teclado, destinos das âncoras, contato por e-mail, tema escuro automático, ausência de links fictícios, movimento reduzido e ausência de rolagem horizontal entre 320 e 1440 pixels, incluindo texto ampliado a 200%.
 
 Algumas verificações conferem o conteúdo inicial fornecido. Ao atualizar nome, e-mail, projetos ou links, atualize as expectativas correspondentes em `tests/portfolio.spec.ts`.
 

@@ -4,35 +4,22 @@
       class="wordmark"
       href="#inicio"
       aria-label="Herbert — início"
-      (click)="menuOpen.set(false)"
+      (click)="selectSection('#inicio')"
     >
       Herbert
       <span>.dev</span>
     </a>
-    <button
-      #menuButton
-      class="menu-toggle"
-      type="button"
-      aria-controls="navegacao"
-      [attr.aria-expanded]="menuOpen()"
-      (click)="menuOpen.set(!menuOpen())"
-    >
-      {{ menuOpen() ? "Fechar menu" : "Abrir menu" }}
-      <span class="menu-symbol" [class.is-open]="menuOpen()" aria-hidden="true">
-        <i></i>
-        <i></i>
-      </span>
-    </button>
     <nav
-      id="navegacao"
+      class="desktop-navigation"
       aria-label="Navegação principal"
-      [class.is-open]="menuOpen()"
     >
       @for (link of links; track link.href) {
       <a
         [href]="link.href"
         [class.contact-link]="link.href === '#contato'"
-        (click)="menuOpen.set(false)"
+        [class.is-active]="isActive(link.href)"
+        [attr.aria-current]="isActive(link.href) ? 'location' : null"
+        (click)="selectSection(link.href)"
       >
         {{ link.label }}
       </a>
@@ -40,3 +27,16 @@
     </nav>
   </div>
 </header>
+
+<nav class="mobile-tab-bar" aria-label="Navegação móvel">
+  @for (link of mobileLinks; track link.href) {
+  <a
+    [href]="link.href"
+    [class.is-active]="isActive(link.href)"
+    [attr.aria-current]="isActive(link.href) ? 'location' : null"
+    (click)="selectSection(link.href)"
+  >
+    {{ link.label }}
+  </a>
+  }
+</nav>

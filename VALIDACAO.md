@@ -5,27 +5,28 @@ Verificações executadas em 21 de setembro de 2026.
 | Verificação | Resultado |
 | --- | --- |
 | Compilação de produção com `npm run build` | Aprovada, sem erros ou alertas de tamanho |
-| Testes com Playwright e Microsoft Edge | 14 aprovados, 0 falhas |
+| Testes com Playwright e Microsoft Edge | 16 aprovados, 0 falhas |
 | Tamanhos de tela | 320, 390, 768, 1024 e 1440 pixels, sem rolagem horizontal |
 | Texto ampliado | 200% em tela de 390 pixels, sem transbordamento horizontal |
-| Navegação | Âncoras válidas, menu móvel, Escape, foco e atalho para o conteúdo aprovados |
+| Navegação | Âncoras válidas, barra superior no computador, barra inferior no celular, seção ativa, foco e atalho para o conteúdo aprovados |
 | Links | GitHub, LinkedIn, Figma, e-mail, telefone, currículo, certificados e repositórios conferidos; endereços antigos com erro 404 foram omitidos |
 | Imagens | Foto corporativa fornecida, StockFlow obtida no LinkedIn, Simulador obtido no GitHub, protótipo extraído do Figma e imagem social própria |
 | Certificado da Zetheta | Página normalizada para 840 × 510 pontos e renderização visual conferida |
 | Movimento reduzido | Rolagem suave desativada quando solicitada pelo sistema |
+| Aparência do sistema | Temas claro e escuro automáticos verificados em computador e celular |
 | Erros de execução | Nenhum erro de página ou de console detectado nos testes |
 | Idioma e metadados | `pt-BR`, título, descrição, URL canônica e Open Graph conferidos |
 | Análise automatizada de acessibilidade | Axe-core 4.13.0, regras WCAG A/AA selecionadas: 0 violações detectadas em computador e celular |
-| Revisão visual | Capturas completas conferidas em 1440 e 390 pixels |
+| Revisão visual | Temas claro e escuro conferidos em 1440 e 390 pixels |
 | Alvos de toque | Links e botões visíveis com altura mínima de 44 pixels em computador e celular |
 | Dependências | Apenas Angular e suas dependências em execução; ferramentas de compilação e Playwright em desenvolvimento |
 | Publicação | Site público no endereço indicado no README |
 
-O azul principal `#0066cc` apresenta contraste de **5,57:1** sobre branco e **5,11:1** sobre o fundo `#f5f5f7`.
+No tema claro, o azul `#0066cc` apresenta contraste de **5,57:1** sobre branco e **5,11:1** sobre o fundo `#f5f5f7`. No tema escuro, o azul de texto `#0a84ff` apresenta contraste de **5,76:1** sobre preto; botões preenchidos mantêm `#0066cc` com texto branco.
 
 Os testes de celular usam o Microsoft Edge com emulação de tamanho de tela, densidade e interação por toque. Eles não substituem a conferência final em um aparelho físico, que depende de acesso a esse aparelho.
 
-A compilação final gerou **169,19 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **48,21 kB**.
+A compilação final gerou **161,53 kB** de JavaScript e CSS, com transferência estimada pelo Angular em **46,01 kB**.
 
 ## Conteúdo conferido
 

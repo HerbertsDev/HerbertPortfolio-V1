@@ -24,6 +24,10 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
     "content",
     "pt_BR",
   );
+  await expect(page.locator('meta[name="viewport"]')).toHaveAttribute(
+    "content",
+    /viewport-fit=cover/,
+  );
   await expect(page.locator("main section")).toHaveCount(6);
   await expect(page.locator("#projetos article")).toHaveCount(3);
   await expect(
@@ -63,32 +67,43 @@ test("apresenta as seis seções, os projetos e metadados em português", async 
   expect(errors).toEqual([]);
 });
 
-test("navega para seções e fecha o menu no celular", async ({ page }) => {
+test("navega pelas barras adequadas em computador e celular", async ({ page }) => {
   await page.goto("/");
-  const toggle = page.getByRole("button", { name: "Abrir menu" });
-  const mobile = await toggle.isVisible();
-  const navigation = page.getByRole("navigation", {
+  const desktopNavigation = page.getByRole("navigation", {
     name: "Navegação principal",
   });
+  const mobileNavigation = page.getByRole("navigation", {
+    name: "Navegação móvel",
+  });
+  const mobile = await mobileNavigation.isVisible();
+
   if (mobile) {
-    await expect(navigation).toBeHidden();
-    await toggle.click();
-    await expect(
-      page.getByRole("button", { name: "Fechar menu" }),
-    ).toHaveAttribute("aria-expanded", "true");
-    await expect(navigation).toBeVisible();
-    await page.keyboard.press("Escape");
-    await expect(navigation).toBeHidden();
-    await expect(toggle).toBeFocused();
-    await toggle.press("Enter");
+    await expect(desktopNavigation).toBeHidden();
+    await mobileNavigation
+      .getByRole("link", { name: "Projetos", exact: true })
+      .click();
+  } else {
+    await expect(desktopNavigation).toBeVisible();
+    await expect(mobileNavigation).toBeHidden();
+    await desktopNavigation
+      .getByRole("link", { name: "Projetos", exact: true })
+      .click();
   }
-  await navigation.getByRole("link", { name: "Projetos", exact: true }).click();
+
   await expect(page).toHaveURL(/#projetos$/);
   await expect(page.locator("#titulo-projetos")).toBeInViewport();
-  if (mobile) {
-    await expect(toggle).toHaveAttribute("aria-expanded", "false");
-    await expect(navigation).toBeHidden();
-  }
+  const activeNavigation = mobile ? mobileNavigation : desktopNavigation;
+  await expect(
+    activeNavigation.getByRole("link", { name: "Projetos", exact: true }),
+  ).toHaveAttribute("aria-current", "location");
+
+  await page.locator("#experiencia").scrollIntoViewIfNeeded();
+  await expect(
+    activeNavigation.getByRole("link", {
+      name: mobile ? "Trajetória" : "Experiência e formação",
+      exact: true,
+    }),
+  ).toHaveAttribute("aria-current", "location");
 });
 
 test("todos os links têm destinos reais e os links não fornecidos ficam ocultos", async ({
@@ -171,6 +186,22 @@ test("respeita a preferência de movimento reduzido", async ({ page }) => {
   ).toBe("auto");
   await page.getByRole("link", { name: "Ver projetos", exact: false }).click();
   await expect(page.locator("#titulo-projetos")).toBeInViewport();
+});
+
+test("acompanha automaticamente o tema escuro do sistema", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/");
+  await expect(page.locator("#titulo-inicio")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => getComputedStyle(element).colorScheme),
+  ).toBe("dark");
+  expect(
+    await page
+      .locator("body")
+      .evaluate((element) => getComputedStyle(element).backgroundColor),
+  ).toBe("rgb(0, 0, 0)");
 });
 
 test("mantém o conteúdo dentro da tela, inclusive com texto ampliado", async ({
