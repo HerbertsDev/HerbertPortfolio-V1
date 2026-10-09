@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Gerar versão de produção
-        run: npm run build -- --base-href /herbert-portfolio/
+        run: npm run build -- --base-href /HerbertPortfolio-V1/
 
       - name: Configurar o GitHub Pages
         uses: actions/configure-pages@v5

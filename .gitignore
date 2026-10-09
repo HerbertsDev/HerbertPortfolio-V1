@@ -4,8 +4,6 @@
 /out-tsc/
 /test-results/
 /playwright-report/
-/.vercel/
-/.sites-runtime/
 /coverage/
 *.tsbuildinfo
 .env
